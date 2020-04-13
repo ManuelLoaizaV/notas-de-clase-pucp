@@ -3,16 +3,19 @@
 \usepackage{amsfonts,latexsym,amsthm,amssymb,amsmath,amscd,euscript}
 \usepackage{mathtools}
 \usepackage{framed}
-% Descomentar fullpage cuando se quiera utilizar la página completa con menos margen horizontal
-\usepackage{fullpage}
+% Descomentar fullpage cuando se quiera utilizar menos margen horizontal
+%\usepackage{fullpage}
 \usepackage{hyperref}
     \hypersetup{colorlinks=true,citecolor=blue,urlcolor =black,linkbordercolor={1 0 0}}
 
-%Tenemos comandos para teoremas, definiciones, ejemplos, lemas, etc. para sus respectivos body types.
+\newenvironment{statement}[1]{\smallskip\noindent\color[rgb]{1.00,0.00,0.50} {\bf #1.}}{}
+\allowdisplaybreaks[1]
+
+% Comandos para teoremas, definiciones, ejemplos, lemas, etc. para sus respectivos body types.
 \renewcommand*{\proofname}{Prueba}
 \renewcommand{\contentsname}{Contenido}
 
-\newtheorem{theorem}{Teorema}[section]
+\newtheorem{theorem}{Teorema}
 \newtheorem*{proposition}{Proposici\'on}
 \newtheorem{lemma}[theorem]{Lema}
 \newtheorem{corollary}[theorem]{Corolario}
@@ -36,7 +39,7 @@
 \newcommand{\BN}{\mathbb N}
 
 \title{C\'odigo Nombre del Curso}
-\author{Tu nombre}
+\author{Tu nombre aqu\'i}
 \date{Fecha}
 
 \begin{document}
@@ -44,13 +47,47 @@
 \maketitle
 
 \vspace*{-0.25in}
-\centerline{Tu universidad}
-\centerline{Ciudad, Pa\'is}
-\centerline{\href{mailto:tu_correo@correo.edu.pe}{{\tt tu_correo@correo.edu.pe}}}
+\centerline{Tu universidad aqu\'i}
+\centerline{Tu regi\'on y pa\'is aqu\'i}
+\centerline{\href{mailto:tucorreoaqui@pucp.edu.pe}{{\tt tucorreoaqui@pucp.edu.pe}}}
 \vspace*{0.15in}
 
 \begin{framed}
-  Descripci\'on.
+  Esta es una plantilla en \LaTeX. Util\'izala en tus listas de ejercicios, notas de clases y mucho m\'as.
 \end{framed}
 
-\tableofcontents
+\begin{statement}{1}
+    Este es el enunciado de un problema. Colocar el enunciado de un problema de un color diferente permite distinguir entre el problema y la soluci\'on.
+\end{statement}
+
+\begin{proof}
+    Tipea tus soluciones en esta secci\'on. Usa las definiciones, lemas y ejemplos cuando sean necesarios.
+    \begin{defn}
+        Definimos $\exp(x)$ para $x \in \BR$ el valor de $$\sum_{i = 0}^\infty\frac{x^i}{i!}.$$
+    \end{defn}
+    Al igual que en la definici\'on anterior, usar ecuaciones en l\'ineas separadas cuando sea posible, esto hace tu problema m\'as le\'ible. Usa {\tt align*} para lista de igualdades:
+    \begin{align*}
+        0 &= 0 + 0 + 0 + 0 + \dots\\
+        &= (1 - 1) + (1 - 1) + \dots \\
+        &= 1 + (-1 + 1) + (-1 + 1) + \dots \\
+        &= 1 + 0 + 0 + 0 \dots \\
+        &= 1.
+    \end{align*}
+    Si necesitas listar cosas, usa {\tt enumerate} o {\tt itemize}. Por ejemplo:
+    \begin{enumerate}
+        \item Debo terminar la lista de ejercicios de \'Algebra Multilineal.
+        \item Debo terminar la plantilla para Teor\'ia de Juegos.
+        \item Debo volver a entrenar Programaci\'on Competitiva.
+    \end{enumerate}
+    Todas las secciones {\tt proof} terminan con el cuadrado que simboliza el hecho de que ha concluido la demostraci\'on.
+\end{proof}
+
+\begin{statement}{2}
+    Si la soluci\'on de un problema es f\'acil de chequear si es correcta, ¿el problema debe ser f\'acil de resolver?
+\end{statement}
+
+\begin{proof}
+    Buena suerte.
+\end{proof}
+
+\end{document}
